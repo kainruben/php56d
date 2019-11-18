@@ -96,7 +96,7 @@ RUN sed -i 's/^ServerSignature/#ServerSignature/g' /etc/apache2/conf-enabled/sec
     echo "SSLProtocol ALL -SSLv2 -SSLv3" >> /etc/apache2/apache2.conf
 
 ADD 000-default.conf /etc/apache2/sites-enabled/000-default.conf
-ADD 001-default-ssl.conf /etc/apache2/sites-enabled/001-default-ssl.conf
+#ADD 001-default-ssl.conf /etc/apache2/sites-enabled/001-default-ssl.conf
 
 #Cleaning a little bt=it the container to make it slimmer.
 RUN apt-get clean
@@ -104,7 +104,7 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #We open port 80 y port 443
 EXPOSE 80
-EXPOSE 443
+#EXPOSE 443
 
 #We start Apache2 at the moment of starting the server
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
