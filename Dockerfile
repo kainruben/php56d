@@ -61,7 +61,7 @@ RUN chmod 777 /home/usuario/logs/*
 # Agregamos la configuracion de apache para limpiar todo
 RUN a2dismod mpm_event && \
     a2enmod mpm_prefork \
-#            ssl \
+            ssl \
             rewrite && \
 #    a2ensite default-ssl && \
     ln -sf /home/usuario/logs/acceso-apache /var/log/apache2/access.log && \
