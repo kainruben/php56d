@@ -74,18 +74,18 @@ ENV APACHE_RUN_GROUP usuario
 WORKDIR /home/usuario
 
 #upload
-RUN echo "file_uploads = On\n" \
-         "memory_limit = 500M\n" \
-         "upload_max_filesize = 500M\n" \
-         "post_max_size = 500M\n" \
-         "max_execution_time = 600\n" \
-         > /etc/php/5.6/cli/conf.d/uploads.ini
+#RUN echo "file_uploads = On\n" \
+#         "memory_limit = 500M\n" \
+#         "upload_max_filesize = 500M\n" \
+#         "post_max_size = 500M\n" \
+#         "max_execution_time = 600\n" \
+#         > /etc/php/5.6/cli/conf.d/uploads.ini
 
 ##php errors log
-RUN echo "error_reporting = E_ALL\n" \
-         "logs_errors = On\n" \
-         "error_log = /home/usuario/logs/php.error.log\n" \
-         > /etc/php/5.6/cli/conf.d/logerrors.ini
+#RUN echo "error_reporting = E_ALL\n" \
+#         "logs_errors = On\n" \
+#         "error_log = /home/usuario/logs/php.error.log\n" \
+#         > /etc/php/5.6/cli/conf.d/logerrors.ini
 
 
 RUN sed -i 's/^ServerSignature/#ServerSignature/g' /etc/apache2/conf-enabled/security.conf; \
